@@ -1,0 +1,22 @@
+{
+  "name": "tupelo",
+  "version": "0.1.0",
+  "description": "Logging service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ketus/Tupelo.git"
+  },
+  "author": "Maciej Oleksa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ketus/Tupelo/issues"
+  },
+  "homepage": "https://github.com/ketus/Tupelo#readme",
+  "dependencies": {
+    "colors": "^1.1.2"
+  }
+}
