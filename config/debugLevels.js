@@ -1,7 +1,8 @@
 module.exports = {
-    VERBOSE: 4,
-    DEBUG: 3,
-    INFO: 2,
-    WARN: 1,
-    ERROR: 0
+    VERBOSE: 5,
+    DEBUG: 4,
+    INFO: 3,
+    WARN: 2,
+    ERROR: 1,
+    DISABLED: 0
 };
