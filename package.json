@@ -1,6 +1,6 @@
 {
   "name": "tupelo",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Logging service",
   "main": "index.js",
   "scripts": {
