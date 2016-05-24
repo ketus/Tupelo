@@ -1,16 +1,18 @@
 module.exports = function(grunt) {
 
     grunt.initConfig({
-        jasmine: {
-            src: [  'index.js',
-                    'config/*.js'
-            ],
+        jasmine_node: {
             options: {
-                vendor: ['/node_modules/colors/safe.js'],
-                specs: 'spec/*.js'
+                matchall: true,
+                projectRoot: './src',
+                requirejs: false,
+                forceExit: true,
+                extensions: 'js',
+                specNameMatcher: 'spec'
             }
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-jasmine');
+    grunt.loadNpmTasks('grunt-jasmine-node');
+    grunt.registerTask('default', ['jasmine_node']);
 };

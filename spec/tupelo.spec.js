@@ -1,22 +1,18 @@
+var rewire = require('rewire');
+var tupelo = rewire('../src/tupelo');
+
 describe('Tupelo tests', function() {
     describe('validateDebugLevel', function() {
 
-        it('accepts strings only', function(done) {
+        var validateDebugLevel = tupelo.__get__('validateDebugLevel');
 
-            expect(validateDebugLevel(1)).toThrowError('Debug level must be a string');
+        it('should accept valid strings only', function(done) {
 
-            expect(validateDebugLevel('Not a valid debugLevel'))
-                .toThrowError('debug level must be set to one of the following:\n\
-                                VERBOSE \tDEBUG \tINFO \tWARN \tERROR \tDISABLED')
+            expect(validateDebugLevel('verbose')).toEqual('VERBOSE');
+
             done();
+
         });
 
-        xit('shows correct timestamp', function(done) {
-            done();
-        });
-
-        xit('accepts strings only', function(done) {
-            done();
-        });
     });
 });

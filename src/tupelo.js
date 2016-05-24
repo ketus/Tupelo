@@ -1,5 +1,5 @@
 var colors = require('colors/safe');
-var debugLevels = require('./config/debugLevels');
+var debugLevels = require('../config/debugLevels');
 
 var tupelo = exports;
 var logLevel = 'VERBOSE';
@@ -22,10 +22,12 @@ var validateDebugLevel = function(level) {
         } else {
             tupelo.error('debug level must be set to one of the following:\n\
             VERBOSE \tDEBUG \tINFO \tWARN \tERROR \tDISABLED');
+            console.trace();
         }
 
     } else {
         tupelo.error('Debug level must be a string');
+        console.trace();
     }
 }
 
