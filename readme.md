@@ -14,12 +14,14 @@ log.setLogLevel('INFO');
 'WARN' is the default.
 
 ### Log it
+
 ```javascript
 log.verbose('verbose logging');
 log.debug('debug info');
 log.info('regular info');
 log.warn('warnings');
-log.error('errors');```
+log.error('errors');
+```
 
 ### Read it
-![alt text](https://github.com/ketus/Tupelo/readme-static/debugLevels.png "Debug levels")
+![alt text](https://raw.githubusercontent.com/ketus/Tupelo/master/readme-static/debugLevels.png "Debug levels")
