@@ -9,8 +9,8 @@ var log = require('tupelo');
 ### Set log level or disable logging at all
 ```javascript
 log.setLogLevel('INFO');
-//VERBOSE DEBUG INFO WARN ERROR DISABLED```
-
+//VERBOSE DEBUG INFO WARN ERROR DISABLED
+```
 'WARN' is the default.
 
 ### Log it
