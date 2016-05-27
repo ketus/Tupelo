@@ -4,13 +4,6 @@ var debugLevels = require('./config/debugLevels');
 var tupelo = exports;
 var debugLevel = 'WARN';
 
-var logMessage = function(debugLevel, color, message) {
-    var time = new Date().toISOString();
-
-    console.log(
-        color(debugLevel + ' on ' + time + '|  ' + message)
-    );
-}
 
 var validateDebugLevel = function(level) {
 
@@ -25,23 +18,35 @@ var validateDebugLevel = function(level) {
                 'Debug level must be set to one of the following: \n' +
                 Object.getOwnPropertyNames(debugLevels) +
                 '| Setting default: ' + debugLevel);
+
+            return false;
         }
 
     } else {
         tupelo.error('Debug level must be a string. Got ' +
-                     typeof level + ': ' + level +
-                     '. Setting default: ' + debugLevel);
-    }
+            typeof level + ': ' + level +
+            '. Setting default: ' + debugLevel);
 
-    return false;
+        return false;
+    }
 }
 
 var levelEnabled = function(selectedLevel) {
     return debugLevels[selectedLevel] <= debugLevels[debugLevel];
 }
 
+var logMessage = function(debugLevel, color, message) {
+    var time = new Date().toISOString();
+
+    console.log(
+        color(debugLevel + ' on ' + time + '|  ' + message)
+    );
+}
+
 tupelo.setLogLevel = function(level) {
-    debugLevel = validateDebugLevel(level);
+    if (validateDebugLevel(level)) {
+        debugLevel = validateDebugLevel(level);
+    }
 }
 
 tupelo.verbose = function(message) {
