@@ -1,5 +1,6 @@
 var rewire = require('rewire');
 var debugLevels = require('../src/config/debugLevels');
+var colors = require('colors/safe');
 var tupelo = rewire('../src/tupelo');
 
 describe('Tupelo tests', function() {
@@ -41,15 +42,13 @@ describe('Tupelo tests', function() {
     });
 
     describe(' displays logs only on enabled levels', function() {
-        xit('should display all logs below or equal to debugLevel', function() {
+        it('should display all logs below or equal to debugLevel', function() {
 
             var logMessage = tupelo.__get__('logMessage');
-
-            spyOn(tupelo, 'logMessage');
-            debugLevel = 'DEBUG';
-            tupelo.verbose('wat')
-            expect(tupelo.logMessage).toHaveBeenCalled();
-
+            console.log(logMessage);
+            console.log = jasmine.createSpy("log");
+            logMessage('VERBOSE', colors.gray, 'test');
+            expect(console.log).toHaveBeenCalled();
         });
 
     });

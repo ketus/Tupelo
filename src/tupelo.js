@@ -6,7 +6,6 @@ var debugLevel = 'WARN';
 
 
 var validateDebugLevel = function(level) {
-
     if (level && typeof level === 'string') {
         level = level.toUpperCase().trim();
 
@@ -35,12 +34,14 @@ var levelEnabled = function(selectedLevel) {
     return debugLevels[selectedLevel] <= debugLevels[debugLevel];
 }
 
-var logMessage = function(debugLevel, color, message) {
+var formatMessage = function(debugLevel, color, message) {
     var time = new Date().toISOString();
+    return color(debugLevel + ' on ' + time + '|  ' + message);
 
-    console.log(
-        color(debugLevel + ' on ' + time + '|  ' + message)
-    );
+}
+
+var logMessage = function(debugLevel, color, message) {
+    console.log( formatMessage(debugLevel, color, message) );
 }
 
 tupelo.setLogLevel = function(level) {
