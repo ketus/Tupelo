@@ -1,5 +1,5 @@
 var colors = require('colors/safe');
-var debugLevels = require('./src/config/debugLevels');
+var debugLevels = require('./config/debugLevels');
 
 var tupelo = exports;
 var debugLevel = 'WARN';
