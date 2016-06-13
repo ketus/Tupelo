@@ -1,5 +1,5 @@
 var colors = require('colors/safe');
-var debugLevels = require('./config/debugLevels');
+var debugLevels = require('./src/config/debugLevels');
 
 var tupelo = exports;
 var debugLevel = 'WARN';
@@ -37,7 +37,6 @@ var levelEnabled = function(selectedLevel) {
 var formatMessage = function(debugLevel, color, message) {
     var time = new Date().toISOString();
     return color(debugLevel + ' on ' + time + '|  ' + message);
-
 }
 
 var logMessage = function(debugLevel, color, message) {
